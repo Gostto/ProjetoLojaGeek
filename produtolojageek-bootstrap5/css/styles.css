@@ -1,0 +1,13 @@
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.carousel-item img {
+  height: 500px;
+  object-fit: cover;
+}
+
+.card img {
+  height: 250px;
+  object-fit: cover;
+}

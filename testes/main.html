@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Header e Navbar</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Header principal */
+    .header {
+      background: #333;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 30px;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #00b6b6;
+    }
+
+    /* Barra de pesquisa */
+    .search-bar {
+      flex: 1;
+      margin: 0 20px;
+      display: flex;
+    }
+
+    .search-bar input {
+      width: 100%;
+      padding: 8px;
+      border: none;
+      border-radius: 4px 0 0 4px;
+      outline: none;
+    }
+
+    .search-bar button {
+      background: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 0 4px 4px 0;
+      cursor: pointer;
+    }
+
+    /* Ícones à direita */
+    .header-icons {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .header-icons a {
+      text-decoration: none;
+      color: white;
+      font-size: 14px;
+    }
+
+    /* Navbar */
+    .navbar {
+      background: #00b6b6;
+      display: flex;
+      justify-content: center;
+      padding: 10px 0;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .navbar a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">NerdStore</div>
+
+    <div class="search-bar">
+      <input type="text" placeholder="O que você está procurando?">
+      <button>🔍</button>
+    </div>
+
+    <div class="header-icons">
+      <a href="#">❤️ Lista de Desejos</a>
+      <a href="#">👤 Entrar</a>
+      <a href="#">🛒 (0)</a>
+    </div>
+  </header>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a href="#">Novidades</a>
+    <a href="#">Vestuário</a>
+    <a href="#">Calçados</a>
+    <a href="#">Bonecos Colecionáveis</a>
+    <a href="#">Leitura</a>
+    <a href="#">Jogos</a>
+    <a href="#">Acessórios</a>
+    <a href="#">Kits</a>
+    <a href="#">Outlet</a>
+    <a href="#">Cupons</a>
+  </nav>
+
+</body>
+</html>
