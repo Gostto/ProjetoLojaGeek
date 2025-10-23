@@ -11,8 +11,8 @@
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <title>Loja Geek - Produot00</title>
 </head>
-<body>
-  <!-- Cabeçário Principal do Site (composto de barra de pesquisa e botões de cadastro)-->
+<body style="background-color: #f9f9f9;">
+  <!--====== Cabeçario Principal do Site (composto de barra de pesquisa e botões de cadastro)======-->
   <header class="header">
     <a href="main.html">
     <div class="logo"> <img src="src/149x74.png" alt="logo loja geek" width="149px" height="74px">
@@ -31,7 +31,7 @@
     </div>
   </header>
 
-    <!-- Barra de navegação do site -->
+    <!--====== Barra de Navegação do Site ======-->
     <div class="navbar fontepadrao">
       <a href="main.html">Ínicio</a>
       <a href="#ofertas">Promoções</a>
@@ -79,6 +79,9 @@
 <main class="main-content fontepadrao">
   <div class="product-container">
     <div class="product-image">
+      <div class="div-titulopagina">
+        <p class="p-historicopagina">Você está em: Ínicio > Camisetas > Camiseta IT, A coisa</p>
+      </div>
       <img src="https://tfcprw.vtexassets.com/arquivos/ids/411739-1200-auto?v=638966406840770000&width=1200&height=auto&aspect=true" alt="Produto Geek">
     </div>
 
@@ -95,7 +98,9 @@
       
       <button class="add-to-cart fontepadrao">🛒 Adicionar ao carrinho</button>
     </div>
-      <!-- Tabs de navegação -->
+
+  </div>
+  <!--====== Tabs de navegação ======-->
   <div class="tabs">
     <ul class="tab-nav">
       <li class="active" data-tab="descricao" style="color: red;">Descrição</li>
@@ -111,31 +116,71 @@
     </div>
 
     <div class="tab-content" id="itens">
-      <ul>
         <p>1x 👕 Camiseta IT, A coisa</p>
         <p>1x 📦 Embalagem personalizada da Loja Geek</p>
-      </ul>
     </div>
 
     <div class="tab-content" id="pagamento">
-      <p>💳 Aceitamos:</p>
-        <p>Cartão de crédito (até 6x sem juros)</p>
-        <p>Boleto bancário</p>
+      <p>Aceitamos:</p>
+        <p>💳 Cartão de crédito (até 6x sem juros)</p>
+        <p>🧾 Boleto bancário</p>
         <p><img src="https://tfcprw.vtexassets.com/assets/vtex/assets-builder/tfcprw.store/2.0.46/logo-pix___c53844713a5d7f4f2a49ae123cfc7437.svg" height="16px">Pix (5% de desconto)</p>
     </div>
   </div>
+  <!--====== Produtos Recomendados (03 Sections) ======-->
+  <div class="div-submain-recomendados fontepadrao">
+  				<h2 class="h2-titulorecomendados">Curtiu? Veja esses aqui também.</h2>
+          <p class="p-subtitulo">Veja também esses produtos similares</p>
+        <!--====== Produtos 01 ======-->
+        <section class="section-recomendados">
+          <a href="produto01.html">
+            <img src="src/266x266.png"
+            width="266px" height="266px" alt="imagem produto 01">
+          <h3 class="h3-nomeproduto"><a href="produto01.html">Produto 01</a></h3>
+          </a>
+          <p class="p-desc">Caneca preta do F 250ml</p>
+          <p class="p-preco">R$ 300,00</p>
+          <p class="p-parcelamento">ou 3x de R$ 100,00 sem juros</p>
+          <button>Comprar</button>
+          <a href="https://wa.link/hrfc44">
+          <button class="button-whatsapp">Saber Mais <img src="src/whatsappicon.png" alt="icone whatsapp"
+            width="16px" height="16px"></button>
+          </a>
+        </section>
+        <!--====== Produtos 02 ======-->
+        <section class="section-recomendados">
+          <a href="produto02.html">
+            <img src="src/266x266.png"
+            width="266px" height="266px" alt="imagem produto 02">
+          <h3 class="h3-nomeproduto"><a href="produto02.html">Produto 02</a></h3>
+          </a>
+          <p class="p-desc">Caneca preta do F 250ml</p>
+          <p class="p-preco">R$ 300,00</p>
+          <p class="p-parcelamento">ou 3x de R$ 100,00 sem juros</p>
+          <button>Comprar</button>
+          <button class="button-whatsapp">Saber Mais <img src="src/whatsappicon.png" alt="icone whatsapp"
+            width="16px" height="16px"></button>
+        </section>
+        <!--====== Produtos 03 ======-->
+        <section class="section-recomendados">
+          <a href="produto03.html">
+            <img src="src/266x266.png"
+            width="266px" height="266px" alt="imagem produto 03">
+          <h3 class="h3-nomeproduto"><a href="produto03.html">Produto 03</a></h3>
+          </a>
+          <p class="p-desc">Caneca preta do F 250ml</p>
+          <p class="p-preco">R$ 300,00</p>
+          <p class="p-parcelamento">ou 3x de R$ 100,00 sem juros</p>
+          <button>Comprar</button>
+          <button class="button-whatsapp">Saber Mais <img src="src/whatsappicon.png" alt="icone whatsapp"
+            width="16px" height="16px"></button>
+        </section>
   </div>
-  <br>
-  <br>
-  <br>
-
-
-  
 </main>
 
-  <!-- Rodapé do site -->
-  <footer class="footer fontepadrao"> <p>footer</p> </footer>
-  <!-- Script do site -->
+<!--====== Rodapé da Página ======-->  
+<footer class="footer fontepadrao"> <p>também conhecido como footer</p> </footer>
+<!--====== Script ======-->
 <script>
   const tabs = document.querySelectorAll('.tab-nav li');
   const contents = document.querySelectorAll('.tab-content');
