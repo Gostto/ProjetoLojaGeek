@@ -82,7 +82,17 @@
       <div class="div-titulopagina">
         <p class="p-historicopagina">Você está em: Ínicio > Camisetas > Camiseta IT, A coisa</p>
       </div>
-      <img src="https://tfcprw.vtexassets.com/arquivos/ids/411739-1200-auto?v=638966406840770000&width=1200&height=auto&aspect=true" alt="Produto Geek">
+  <div class="product-gallery">
+    <div class="thumbnails">
+      <img src="https://tfcprw.vtexassets.com/arquivos/ids/411677-1200-auto?v=638966396883070000&width=1200&height=auto&aspect=true" alt="Imagem 1" class="thumb active" onclick="changeImage(this)">
+      <img src="https://tfcprw.vtexassets.com/arquivos/ids/411678-1200-auto?v=638966396883070000&width=1200&height=auto&aspect=true" alt="Imagem 2" class="thumb" onclick="changeImage(this)">
+      <img src="https://tfcprw.vtexassets.com/arquivos/ids/411679-1200-auto?v=638966396883200000&width=1200&height=auto&aspect=true" alt="Imagem 3" class="thumb" onclick="changeImage(this)">
+    </div>
+
+    <div class="main-image">
+      <img src="https://tfcprw.vtexassets.com/arquivos/ids/411677-1200-auto?v=638966396883070000&width=1200&height=auto&aspect=true" alt="Imagem principal" id="mainDisplay">
+    </div>
+  </div>
     </div>
 
     <div class="product-info">
@@ -194,6 +204,19 @@
       document.getElementById(tab.dataset.tab).classList.add('active');
     });
   });
+
+
+    function changeImage(element) {
+      const mainDisplay = document.getElementById("mainDisplay");
+      const allThumbs = document.querySelectorAll(".thumb");
+
+      // muda a imagem principal
+      mainDisplay.src = element.src;
+
+      // remove a classe "active" de todas e adiciona na clicada
+      allThumbs.forEach(img => img.classList.remove("active"));
+      element.classList.add("active");
+    }
 </script>
 
 </body>
