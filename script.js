@@ -44,19 +44,3 @@ function showSlides(n) {
 
   // Duplicar o conteúdo para evitar pausas no loop
   container.innerHTML += "   ㅤㅤ•ㅤㅤ   " + container.innerHTML;
-
-// swiper slider
-
-//Galeria de Imagens
-
-    function changeImage(element) {
-      const mainDisplay = document.getElementById("mainDisplay");
-      const allThumbs = document.querySelectorAll(".thumb");
-
-      // muda a imagem principal
-      mainDisplay.src = element.src;
-
-      // remove a classe "active" de todas e adiciona na clicada
-      allThumbs.forEach(img => img.classList.remove("active"));
-      element.classList.add("active");
-    }
