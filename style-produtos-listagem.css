@@ -1,0 +1,32 @@
+.filtro-box {
+    background: rgb(219, 219, 219);
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    
+}
+
+
+/* grid dos produtos */
+.card-produto {
+    background: #fff;
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    transition: 0.3s;
+    animation: fadeInUp .6s ease forwards;
+    opacity: 0;
+}
+.card-produto:hover {
+    transform: translateY(-5px);
+}
+
+/* imagem */
+.card-produto img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+@keyframes fadeInUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to   { transform: translateY(0); opacity: 1; }
+}
