@@ -1,31 +1,31 @@
 const produtos = [
     {
-        nome: "Camiseta IT, A Coisa",
-        preco: 80,
-        parcelamento: "3x de R$ 26,67",
-        categoria: "camiseta",
-        tamanho: ["P","M","G","GG"],
-        img: "https://tfcprw.vtexassets.com/arquivos/ids/411739-1200-auto?v=638966406840770000&width=1200&height=auto&aspect=true",
-        link: "produto00.html"
-    },
-    {
-        nome: "Moletom Naruto The Best Ramen",
-        parcelamento: "5x de R$ 32,00",
-        preco: 160,
-        categoria: "moletom",
-        tamanho: ["M","G"],
-        img: "https://tfcprw.vtexassets.com/arquivos/ids/393741-1200-auto?v=638761757200530000&width=1200&height=auto&aspect=true",
-        link: "produto00.html"
-    },
-    {
-        nome: "Meia Homem Aranha",
-        parcelamento: "2x de R$ 30,00",
+        nome: "Quadro Doom Eternal",
         preco: 60,
-        categoria: "meia",
-        tamanho: ["G","GG"],
-        img: "https://tfcprw.vtexassets.com/arquivos/ids/400525-1200-auto?v=638823976461730000&width=1200&height=auto&aspect=true",
-        link: "produto00.html"
-    }
+        parcelamento: "3x de R$ 20,00",
+        categoria: "quadro",
+        img: "https://www.quadrorama.com.br/imagens/quadro-decorativo/?quadro=2024/10/62-18.png",
+        tamanho: ["Único"],
+        link: "produto04.html"
+    },
+    {
+        nome: "Poster Metal Gear Solid",
+        preco: 30,
+        parcelamento: "2x de R$ 15,00",
+        categoria: "poster",
+        img: "https://i.ebayimg.com/images/g/XF4AAOSwMQBlzmW6/s-l1600.webp",
+        tamanho: ["Único"],
+        link: "produto02.html"
+    },
+    {
+        nome: "Almofada Super Mario",
+        preco: 80,
+        parcelamento: "2x de R$ 40,00",
+        categoria: "almofada",
+        img: "https://down-br.img.susercontent.com/file/sg-11134201-7rblx-loc2ruehnhw15d.webp",
+        tamanho: ["Único"],
+        link: "produto03.html"
+    },
 ];
 
 function renderizar(lista) {

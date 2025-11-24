@@ -1,31 +1,31 @@
 const produtos = [
     {
-        nome: "Camiseta IT, A Coisa",
-        preco: 80,
-        parcelamento: "3x de R$ 26,67",
-        categoria: "camiseta",
-        tamanho: ["P","M","G","GG"],
-        img: "https://tfcprw.vtexassets.com/arquivos/ids/411739-1200-auto?v=638966406840770000&width=1200&height=auto&aspect=true",
+        nome: "Tênis Naruto Cano Alto",
+        preco: 220,
+        parcelamento: "5x de R$ 44,00",
+        categoria: "tenis",
+        tamanho: ["38","39","40","41","42"],
+        img: "https://static.zattini.com.br/produtos/tenis-cano-alto-anime-naruto-2-top/21/8B3-0373-221/8B3-0373-221_zoom1.jpg?ts=1694812939&ims=1088x",
         link: "produto00.html"
     },
     {
-        nome: "Moletom Naruto The Best Ramen",
-        parcelamento: "5x de R$ 32,00",
-        preco: 160,
-        categoria: "moletom",
-        tamanho: ["M","G"],
-        img: "https://tfcprw.vtexassets.com/arquivos/ids/393741-1200-auto?v=638761757200530000&width=1200&height=auto&aspect=true",
+        nome: "Chinelo Naruto Uzumaki",
+        preco: 220,
+        parcelamento: "5x de R$ 44,00",
+        categoria: "chinelo",
+        tamanho: ["38","39","40","41","42"],
+        img: "https://static.zattini.com.br/produtos/tenis-cano-alto-anime-naruto-2-top/21/8B3-0373-221/8B3-0373-221_zoom1.jpg?ts=1694812939&ims=1088x",
         link: "produto00.html"
     },
     {
-        nome: "Meia Homem Aranha",
-        parcelamento: "2x de R$ 30,00",
-        preco: 60,
-        categoria: "meia",
-        tamanho: ["G","GG"],
-        img: "https://tfcprw.vtexassets.com/arquivos/ids/400525-1200-auto?v=638823976461730000&width=1200&height=auto&aspect=true",
+        nome: "Crocs Naruto Uzumaki",
+        preco: 220,
+        parcelamento: "5x de R$ 44,00",
+        categoria: "sandalia",
+        tamanho: ["38","39","40","41","42"],
+        img: "https://static.zattini.com.br/produtos/tenis-cano-alto-anime-naruto-2-top/21/8B3-0373-221/8B3-0373-221_zoom1.jpg?ts=1694812939&ims=1088x",
         link: "produto00.html"
-    }
+    },
 ];
 
 function renderizar(lista) {

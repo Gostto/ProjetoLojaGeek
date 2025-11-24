@@ -1,31 +1,31 @@
 const produtos = [
     {
-        nome: "Camiseta IT, A Coisa",
+        nome: "Mangá Jujutsu Kaisen Vol.1",
+        preco: 34,
+        parcelamento: "2x de R$ 17,00",
+        categoria: "manga",
+        tamanho: ["Único"],
+        img: "https://m.media-amazon.com/images/I/61ResbP4aPL._SL1000_.jpg",
+        link: "produto00.html"
+    },
+    {
+        nome: "HQ Batman Ano Um",
+        preco: 45,
+        parcelamento: "2x de R$ 22,50",
+        categoria: "hq",
+        tamanho: ["Único"],
+        img: "https://m.media-amazon.com/images/I/61ResbP4aPL._SL1000_.jpg",
+        link: "produto00.html"
+    },
+    {
+        nome: "Cyberpunk 2077: trauma team",
         preco: 80,
-        parcelamento: "3x de R$ 26,67",
-        categoria: "camiseta",
-        tamanho: ["P","M","G","GG"],
-        img: "https://tfcprw.vtexassets.com/arquivos/ids/411739-1200-auto?v=638966406840770000&width=1200&height=auto&aspect=true",
+        parcelamento: "2x de R$ 40,00",
+        categoria: "livro",
+        img: "https://m.media-amazon.com/images/I/61ResbP4aPL._SL1000_.jpg",
+        tamanho: ["Único"],
         link: "produto00.html"
     },
-    {
-        nome: "Moletom Naruto The Best Ramen",
-        parcelamento: "5x de R$ 32,00",
-        preco: 160,
-        categoria: "moletom",
-        tamanho: ["M","G"],
-        img: "https://tfcprw.vtexassets.com/arquivos/ids/393741-1200-auto?v=638761757200530000&width=1200&height=auto&aspect=true",
-        link: "produto00.html"
-    },
-    {
-        nome: "Meia Homem Aranha",
-        parcelamento: "2x de R$ 30,00",
-        preco: 60,
-        categoria: "meia",
-        tamanho: ["G","GG"],
-        img: "https://tfcprw.vtexassets.com/arquivos/ids/400525-1200-auto?v=638823976461730000&width=1200&height=auto&aspect=true",
-        link: "produto00.html"
-    }
 ];
 
 function renderizar(lista) {
