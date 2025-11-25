@@ -31,8 +31,11 @@ const produtos = [
 function renderizar(lista) {
     const container = document.getElementById("listaProdutos");
     container.innerHTML = "";
+    const formatter = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' });
 
     lista.forEach(p => {
+        const precoParam = Number(p.preco).toFixed(2);
+        const buyHref = `pagamento.html?produto=${encodeURIComponent(p.link)}&nome=${encodeURIComponent(p.nome)}&preco=${encodeURIComponent(precoParam)}`;
         container.innerHTML += `
             <div class="col-6 col-md-4 col-lg-3 mb-4">
                 <div class="card-produto text-decoration-none">
@@ -40,9 +43,9 @@ function renderizar(lista) {
                     <img src="${p.img}" alt="${p.nome}">
                     <h5 class="mt-2">${p.nome}</h5>
                 </a>
-                    <p class="h5 text-danger fw-bold">R$ ${p.preco},00</p>
+                    <p class="h5 text-danger fw-bold">${formatter.format(p.preco)}</p>
                     <p class="text-muted">ou ${p.parcelamento} sem juros</p>
-                    <button class="btn btn-success w-100">Comprar</button>
+                    <a href="${buyHref}" class="btn btn-success w-100">Comprar</a>
                 </div>
             </div>
         `;
@@ -51,13 +54,17 @@ function renderizar(lista) {
 
 renderizar(produtos);
 
-document.getElementById("searchInput").addEventListener("input", filtrar);
-document.querySelectorAll(".filtro-categoria").forEach(el => el.addEventListener("change", filtrar));
-document.querySelectorAll(".filtro-tamanho").forEach(el => el.addEventListener("change", filtrar));
-document.getElementById("precoRange").addEventListener("input", () => {
-    document.getElementById("precoValor").innerText = "Até R$ " + document.getElementById("precoRange").value;
-    filtrar();
-});
+try {
+    document.getElementById("searchInput").addEventListener("input", filtrar);
+    document.querySelectorAll(".filtro-categoria").forEach(el => el.addEventListener("change", filtrar));
+    document.querySelectorAll(".filtro-tamanho").forEach(el => el.addEventListener("change", filtrar));
+    document.getElementById("precoRange").addEventListener("input", () => {
+        document.getElementById("precoValor").innerText = "Até R$ " + document.getElementById("precoRange").value;
+        filtrar();
+    });
+} catch (e) {
+    // página pode não ter filtros
+}
 
 function filtrar() {
     const busca = document.getElementById("searchInput").value.toLowerCase();

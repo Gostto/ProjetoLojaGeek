@@ -1,33 +1,80 @@
 const produtos = [
     {
-        nome: "Camiseta IT, A Coisa",
-        preco: 80,
-        parcelamento: "3x de R$ 26,67",
+        nome: "Camiseta Metallica, And Justice For All",
+        preco: 70,
+        parcelamento: "3x de R$ 23,33",
         categoria: "camiseta",
         tamanho: ["P","M","G","GG"],
-        img: "https://tfcprw.vtexassets.com/arquivos/ids/411739-1200-auto?v=638966406840770000&width=1200&height=auto&aspect=true",
+        img: "/src/blusas/blusametallicatras.png",
         link: "produto00.html"
     },
     {
-        nome: "Moletom Naruto The Best Ramen",
-        parcelamento: "5x de R$ 32,00",
-        preco: 160,
+        nome: "Camiseta Resident Evil",
+        parcelamento: "3x de R$ 23,33",
+        preco: 70,
+        categoria: "camiseta",
+        tamanho: ["P","M","G","GG"],
+        img: "/src/blusas/blusaresidentevilfrente.png",
+        link: "produto01.html"
+    },
+    {
+        nome: "Camiseta Quarteto Fantastico",
+        parcelamento: "3x de R$ 23,33",
+        preco: 70,
+        categoria: "camiseta",
+        tamanho: ["P","M","G","GG"],
+        img: "/src/blusas/blusa%20quarteto%20fant%C3%A1stico%20frente.png",
+        link: "produto05.html"
+    },
+    {
+        nome: "Camiseta Mikasa",
+        parcelamento: "3x de R$ 23,33",
+        preco: 70,
+        categoria: "camiseta",
+        tamanho: ["P","M","G","GG"],
+        img: "/src/blusas/blusamikasafrente.png",
+        link: "produto06.html"
+    },
+    {
+        nome: "Moletom Batman",
+        parcelamento: "3x de R$ 46,66",
+        preco: 140,
         categoria: "moletom",
-        tamanho: ["M","G"],
-        img: "https://tfcprw.vtexassets.com/arquivos/ids/393741-1200-auto?v=638761757200530000&width=1200&height=auto&aspect=true",
-        link: "produto00.html"
+        tamanho: ["M","G","GG"],
+        img: "/src/casacos/casaco%20batman%20frente.png",
+        link: "produto07.html"
     },
     {
-        nome: "Meia Homem Aranha",
-        parcelamento: "2x de R$ 30,00",
-        preco: 60,
-        categoria: "meia",
-        tamanho: ["G","GG"],
-        img: "https://tfcprw.vtexassets.com/arquivos/ids/400525-1200-auto?v=638823976461730000&width=1200&height=auto&aspect=true",
-        link: "produto00.html"
-    }
+        nome: "Moletom Bucket Head",
+        parcelamento: "3x de R$ 46,66",
+        preco: 140,
+        categoria: "moletom",
+        tamanho: ["M","G","GG"],
+        img: "/src/casacos/casaco%20bucket%20head%20frente.png",
+        link: "produto08.html"
+    },
+    {
+        nome: "Moletom Fnaf 2",
+        parcelamento: "3x de R$ 46,66",
+        preco: 140,
+        categoria: "moletom",
+        tamanho: ["M","G","GG"],
+        img: "/src/casacos/casaco%20fnaf%202%20frente.png",
+        link: "produto09.html"
+    },
+    {
+        nome: "Moletom Tokyo Ghoul",
+        parcelamento: "3x de R$ 46,66",
+        preco: 140,
+        categoria: "moletom",
+        tamanho: ["M","G","GG"],
+        img: "/src/casacos/casaco%20tokyo%20ghoul%20frente.png",
+        link: "produto10.html"
+    },
+
 ];
 
+// renderizar produtos
 function renderizar(lista) {
     const container = document.getElementById("listaProdutos");
     container.innerHTML = "";
@@ -51,6 +98,7 @@ function renderizar(lista) {
 
 renderizar(produtos);
 
+// FILTROS
 document.getElementById("searchInput").addEventListener("input", filtrar);
 document.querySelectorAll(".filtro-categoria").forEach(el => el.addEventListener("change", filtrar));
 document.querySelectorAll(".filtro-tamanho").forEach(el => el.addEventListener("change", filtrar));

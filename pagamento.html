@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pagamento — Covil Nerd</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style-produtos.css">
+</head>
+<body class="bg-light">
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-8">
+            <div class="card p-4">
+                <h3>Pagamento</h3>
+                <p id="produtoResumo" class="text-muted">Carregando produto...</p>
+
+                <form id="formPagamento">
+                    <div class="mb-3">
+                        <label class="form-label">Nome completo</label>
+                        <input id="nomeCliente" type="text" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">E-mail</label>
+                        <input id="emailCliente" type="email" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Endereço de entrega</label>
+                        <input id="endereco" type="text" class="form-control" required>
+                    </div>
+
+                    <h5>Forma de pagamento</h5>
+                    <div class="mb-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="pagamento" id="opCartao" value="cartao" checked>
+                            <label class="form-check-label" for="opCartao">Cartão de crédito</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="pagamento" id="opPix" value="pix">
+                            <label class="form-check-label" for="opPix">Pix</label>
+                        </div>
+                    </div>
+
+                    <div id="cartaoFields">
+                        <div class="mb-3">
+                            <label class="form-label">Número do cartão</label>
+                            <input id="cardNumber" type="text" class="form-control" placeholder="0000 0000 0000 0000">
+                        </div>
+                        <div class="row">
+                            <div class="col-6 mb-3">
+                                <label class="form-label">Validade</label>
+                                <input id="cardExp" type="text" class="form-control" placeholder="MM/AA">
+                            </div>
+                            <div class="col-6 mb-3">
+                                <label class="form-label">CVV</label>
+                                <input id="cardCvv" type="text" class="form-control" placeholder="123">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-flex gap-2">
+                        <button type="submit" class="btn btn-primary">Finalizar pagamento</button>
+                        <a href="index.html" class="btn btn-secondary">Cancelar</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Lê querystring e preenche resumo do pedido
+    const qs = new URLSearchParams(window.location.search);
+    const produtoFile = qs.get('produto') || '';
+    const preco = qs.get('preco') || '';
+    const nome = qs.get('nome') || '';
+
+    const resumoEl = document.getElementById('produtoResumo');
+    const formatter = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' });
+    const precoNum = Number(preco) || 0;
+    if (nome) {
+        resumoEl.textContent = `${nome} — ${formatter.format(precoNum)}`;
+    } else if (produtoFile) {
+        resumoEl.textContent = `${produtoFile} — ${formatter.format(precoNum)}`;
+    } else {
+        resumoEl.textContent = 'Produto não especificado — verifique o pedido.';
+    }
+
+    // Mostrar/ocultar campos de cartão
+    function toggleCartaoFields() {
+        const cartao = document.getElementById('cartaoFields');
+        if (document.getElementById('opCartao').checked) cartao.style.display = '';
+        else cartao.style.display = 'none';
+    }
+    document.querySelectorAll('input[name="pagamento"]').forEach(r => r.addEventListener('change', toggleCartaoFields));
+    toggleCartaoFields();
+
+    // Máscaras e validações simples (client-side)
+    const cardNumber = document.getElementById('cardNumber');
+    const cardExp = document.getElementById('cardExp');
+    const cardCvv = document.getElementById('cardCvv');
+
+    function onlyDigits(value){ return value.replace(/\D/g,''); }
+
+    cardNumber && cardNumber.addEventListener('input', (e) => {
+        let v = onlyDigits(e.target.value).slice(0,16);
+        e.target.value = v.replace(/(\d{4})(?=\d)/g, '$1 ');
+    });
+
+    cardExp && cardExp.addEventListener('input', (e) => {
+        let v = onlyDigits(e.target.value).slice(0,4);
+        if (v.length >= 3) v = v.slice(0,2) + '/' + v.slice(2);
+        e.target.value = v;
+    });
+
+    cardCvv && cardCvv.addEventListener('input', (e) => {
+        e.target.value = onlyDigits(e.target.value).slice(0,3);
+    });
+
+    // Submissão: valida campos básicos e redireciona
+    document.getElementById('formPagamento').addEventListener('submit', (e) => {
+        e.preventDefault();
+        const nomeCliente = document.getElementById('nomeCliente').value.trim();
+        const email = document.getElementById('emailCliente').value.trim();
+        const endereco = document.getElementById('endereco').value.trim();
+        const metodoCartao = document.getElementById('opCartao').checked;
+
+        if (!nomeCliente || !email || !endereco) {
+            alert('Por favor, preencha nome, e-mail e endereço.');
+            return;
+        }
+
+        if (metodoCartao) {
+            const digits = onlyDigits(cardNumber.value || '');
+            if (digits.length !== 16) { alert('Número do cartão inválido. Use 16 dígitos.'); return; }
+            const exp = (cardExp.value || '').split('/');
+            if (exp.length !== 2 || Number(exp[0]) < 1 || Number(exp[0]) > 12) { alert('Validade do cartão inválida.'); return; }
+            if ((cardCvv.value || '').length < 3) { alert('CVV inválido.'); return; }
+        }
+
+        const params = new URLSearchParams({ produto: produtoFile, preco: precoNum.toFixed(2), nomeCliente: nomeCliente });
+        window.location.href = 'pagamento-sucesso.html?' + params.toString();
+    });
+</script>
+</body>
+</html>

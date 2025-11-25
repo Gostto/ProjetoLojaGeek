@@ -7,6 +7,184 @@ a {
     color: black;
 }
 
+body {
+    background-color: #CFCFCF;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+/*barra de busca*/
+.search-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 725px;         
+    max-width: 100%;
+    background: #fff;
+    border: 3px solid #f8d24a;
+    border-radius: 50px;   
+    overflow: hidden;      
+    padding: 0;
+}
+
+.input-search {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 12px 16px;
+    font-size: 16px;
+    background: transparent;
+}
+
+.button-search {
+    border: none;
+    background: transparent;
+    padding: 12px 16px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.button-search:hover {
+    background: #f0f0f0;
+}
+
+
+/*barra de navegação*/
+.navbar {
+    background: transparent;
+    padding: 0;
+}
+
+.navbar-container {
+    display: flex;
+    align-items: center;
+}
+
+.merch-items {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 25px;
+}
+
+.merch-items > li {
+    position: relative;
+}
+
+.merch-items > li > a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 500;
+    padding: 15px 0;
+    display: block;
+    transition: color .3s ease;
+}
+
+.merch-items > li > a:hover {
+    color: #f8d24a;
+}
+
+.merch-items li ul {
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+
+    position: absolute;
+    top: 100%;
+    left: 0;
+
+    min-width: 180px;
+
+    background: #212529;
+    border: 1px solid #333;
+    border-radius: 4px;
+    box-shadow: 0 4px 10px rgba(0,0,0,.4);
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all .25s ease;
+    z-index: 999;
+}
+
+.merch-items li:hover ul {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.merch-items li ul li a {
+    display: block;
+    padding: 10px 15px;
+    color: #e0e0e0;
+    font-size: 15px;
+    text-decoration: none;
+    transition: background .2s, color .2s;
+}
+
+.merch-items li ul li a:hover {
+    background: #333;
+    color: #f8d24a;
+}
+
+@media (max-width: 992px) {
+    .navbar-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .merch-items {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 600px) {
+    .merch-items {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .merch-items > li > a {
+        padding: 10px 0;
+    }
+
+    .merch-items li ul {
+        position: relative;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        box-shadow: none;
+        border: none;
+        background: transparent;
+        padding-left: 10px;
+    }
+
+    .merch-items li ul li a {
+        padding: 6px 0;
+    }
+}
+
+/* barra de login/cadastro */
+.login-cadastro {
+    text-align: right;
+    color: white;
+    font-size: 14px;
+}
+
+.login-link a {
+    color: #f8d24a;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
 /* localização da página */
 
 .container-location{
@@ -107,6 +285,7 @@ a {
     padding: 10px 30px;
     font-size: 16px;
     border-radius: 8px;
+    background-color: #ccad3d;   
 }
 
 

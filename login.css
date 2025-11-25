@@ -1,0 +1,252 @@
+body {
+    background-image:url(file:///C:/Users/unico/Downloads/ProjetoLojaGeekv1.7/src/background%201.png);
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+/*barra de busca*/
+.search-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 725px;         
+    max-width: 100%;
+    background: #fff;
+    border: 3px solid #f8d24a;
+    border-radius: 50px;   
+    overflow: hidden;      
+    padding: 0;
+}
+
+.input-search {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 12px 16px;
+    font-size: 16px;
+    background: transparent;
+}
+
+.button-search {
+    border: none;
+    background: transparent;
+    padding: 12px 16px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.button-search:hover {
+    background: #f0f0f0;
+}
+
+
+/*barra de navegação*/
+.navbar {
+    background: transparent;
+    padding: 0;
+}
+
+.navbar-container {
+    display: flex;
+    align-items: center;
+}
+
+.merch-items {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 25px;
+}
+
+.merch-items > li {
+    position: relative;
+}
+
+.merch-items > li > a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 500;
+    padding: 15px 0;
+    display: block;
+    transition: color .3s ease;
+}
+
+.merch-items > li > a:hover {
+    color: #f8d24a;
+}
+
+.merch-items li ul {
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+
+    position: absolute;
+    top: 100%;
+    left: 0;
+
+    min-width: 180px;
+
+    background: #212529;
+    border: 1px solid #333;
+    border-radius: 4px;
+    box-shadow: 0 4px 10px #00000066;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all .25s ease;
+    z-index: 999;
+}
+
+.merch-items li:hover ul {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.merch-items li ul li a {
+    display: block;
+    padding: 10px 15px;
+    color: #e0e0e0;
+    font-size: 15px;
+    text-decoration: none;
+    transition: background .2s, color .2s;
+}
+
+.merch-items li ul li a:hover {
+    background: #333;
+    color: #f8d24a;
+}
+
+@media (max-width: 992px) {
+    .navbar-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .merch-items {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 600px) {
+    .merch-items {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .merch-items > li > a {
+        padding: 10px 0;
+    }
+
+    .merch-items li ul {
+        position: relative;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        box-shadow: none;
+        border: none;
+        background: transparent;
+        padding-left: 10px;
+    }
+
+    .merch-items li ul li a {
+        padding: 6px 0;
+    }
+}
+
+/* barra de login/cadastro */
+.login-cadastro {
+    text-align: right;
+    color: white;
+    font-size: 14px;
+}
+
+.login-link a {
+    color: #f8d24a;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+/** barra login container **/
+.text-center{
+    color: #CFCFCF;
+}
+
+.text-decoration-none{
+    color: #CFCFCF;
+}
+
+.card {
+    background: #212529;
+    border: 1px solid #222;
+    border-radius: 14px;
+    transition: 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+}
+
+.card-body label {
+    color: #ddd;
+    font-weight: 500;
+}
+
+.form-control {
+    background: #CFCFCF;
+    border: 1px solid #333;
+    color: #fff;
+    border-radius: 6px;
+    transition: 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: #00eaff;
+    box-shadow: 0 0 0 3px rgba(0, 234, 255, 0.2);
+}
+
+.btn-success {
+    background: #b6982a ;
+    border: none;
+    transition: 0.3s ease;
+}
+
+.btn-success:hover {
+    filter: brightness(1.15);
+    background-color: #f8d24a;
+}
+
+.alert-success {
+    background: #f8d24a !important;
+    color: #ffffff !important;
+    border: none;
+    border-radius: 6px;
+}
+
+/* ---------- FOOTER ---------- */
+.site-footer {
+    background: #111;
+    border-top: 1px solid #222;
+}
+
+.footer-text {
+    color: #ccc;
+    font-size: 14px;
+}
+
+/* ---------- RESPONSIVIDADE ---------- */
+@media (max-width: 768px) {
+    .merch-items {
+        display: none;
+    }
+}

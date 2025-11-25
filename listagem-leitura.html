@@ -3,88 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leitura - Covil Nerd</title>
+    <title>Vestuário - Covil Nerd</title>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="style-produtos-listagem.css">
-    <link rel="stylesheet" href="style.css">
     <link rel="icon" href="/src/logo02.png" type="image/png">
 </head>
 
 <body class="bg-light">
 
-    <header class="p-3 text-bg-dark">
-        <div class="container">
-            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-                <a href="index.html" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-                    <img src="./src/logo03.png" alt="Logo" width="100" height="100" class="me-3">
-                    </svg>
-                </a>
-                <a class="btn btn-primary btn-warning me-lg-2" href="#" role="button">Promoções</a>
-                <div class="dropdown">
-                    <button class="btn btn-secondary btn-warning dropdown-toggle me-lg-2" type="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        Vestuário
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Camisetas</a></li>
-                        <li><a class="dropdown-item" href="#">Moletons</a></li>
-                        <li><a class="dropdown-item" href="#">Jaquetas e Casacos</a></li>
-                        <li><a class="dropdown-item" href="#">Shorts e Bermudas</a></li>
-                        <li><a class="dropdown-item" href="#">Calças</a></li>
-                        <li><a class="dropdown-item" href="#">Acessorios</a></li>
-                    </ul>
-                </div>
+<header class="p-3 text-bg-dark">
+    <div class="container">
+        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
 
-                <div class="dropdown">
-                    <button class="btn btn-secondary btn-warning dropdown-toggle me-lg-2" type="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        Calçados
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Tênis</a></li>
-                        <li><a class="dropdown-item" href="#">Crocs</a></li>
-                        <li><a class="dropdown-item" href="#">Chinelos</a></li>
-                        <li><a class="dropdown-item" href="#">Sandalias</a></li>
-                    </ul>
-                </div>
-                <div class="dropdown">
-                    <button class="btn btn-secondary btn-warning dropdown-toggle me-lg-2" type="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        Home e Decor
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Quadros e Posters</a></li>
-                        <li><a class="dropdown-item" href="#">Almofadas</a></li>
-                    </ul>
-                </div>
-                <div class="dropdown">
-                    <button class="btn btn-secondary btn-warning dropdown-toggle me-lg-3" type="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        Leitura
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Livros</a></li>
-                        <li><a class="dropdown-item" href="#">Mangás</a></li>
-                        <li><a class="dropdown-item" href="#">Hq's</a></li>
-                    </ul>
-                </div>
-                <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search"> <input type="search"
-                        class="form-control form-control-dark text-bg-light" placeholder="Buscar..."
-                        aria-label="Search">
-                </form>
-                <div class="text-end">
-                    <a href="login.html">
-                        <button type="button" class="btn btn-warning me-lg-2">Entrar</button>
-                    </a>
-                    <a href="cadastro.html">
-                        <button type="button" class="btn btn-warning me-lg-2">Cadastrar-se</button>
-                    </a>
-                    <button type="button" class="btn btn-warning">🛒 Carrinho</button>
+            <a href="index.html" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                <img src="./src/logo03.png" alt="Logo" width="100" height="100" class="me-3">
+                </a>
+
+            <div class="navbar">
+                <div class="navbar-container">
+                    
+                    <div class="search">
+                        <form class="search-bar" method="get" data-search="suggestion">
+                            <input class="input-search" placeholder="O que está procurando?" spellcheck="false" autocomplete="off">
+                            <button class="button-search" aria-label="buscar">🔍</button>
+                        </form>
+
+                        <ul class="merch-items">
+                            
+                            <li class="Promoções">
+                                <a href="listagem-promocoes.html" title="Promoções">Promoções</a>
+                                <ul class="promo-merch-list">
+                                    <li><a href="#">Promoções</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="vestuario">
+                                <a href="listagem-vestuario.html" title="vestuario">Vestuário</a>
+                                <ul class="vest-merch-list">
+                                    <li><a href="listagem-camisetas.html">Camisetas</a></li>
+                                    <li><a href="listagem-moletom.html">Moletons</a></li>
+                                    <li><a href="listagem-vestuario.html">Acessorios</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="Calçados">
+                                <a href="listagem-calcados.html" title="Calçados">Calçados</a>
+                                <ul class="shoe-merch-list">
+                                    <li><a href="#">Tênis</a></li>
+                                    <li><a href="#">Crocs</a></li>
+                                    <li><a href="#">Chinelos</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="Home-Decor">
+                                <a href="listagem-Home-Decor.html" title="Home-Decor">Home & Decor</a>
+                                <ul class="decor-merch-list">
+                                    <li><a href="#">Quadros</a></li>
+                                    <li><a href="#">Posters</a></li>
+                                    <li><a href="#">Almofadas</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="Colecionaveis">
+                                <a href="listagem-colecionaveis.html" title="Colecionaveis">Colecionaveis</a>
+                                <ul class="colect-merch-list">
+                                    <li><a href="#">Action-Figure</a></li>
+                                    <li><a href="#">Funko-Pop</a></li>
+                                    <li><a href="#">Fandom Box</a></li>
+                                    <li><a href="#">Plush</a></li>
+                                    <li><a href="#">Blind Box</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="Utensilios">
+                                <a href="listagem-utensilios.html" title="Utensilios">Utensilios</a>
+                                <ul class="utensilis-merch-list">
+                                    <li><a href="#">Canecas</a></li>
+                                    <li><a href="#">Copos</a></li>
+                                    <li><a href="#">Garrafas</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="Leitura">
+                                <a href="listagem-leitura.html" title="Leitura">Leitura</a>
+                                <ul class="book-merch-list">
+                                    <li><a href="#">Livros</a></li>
+                                    <li><a href="#">Mangás</a></li>
+                                    <li><a href="#">HQs</a></li>
+                                    <li><a href="#">Cadernos</a></li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </div>
+
                 </div>
             </div>
+
+            <div class="login-cadastro d-flex flex-column text-end ms-auto">
+                <span class="text-white">Minha Conta</span>
+                <div class="login-link">
+                    <a href="login.html">Login</a>
+                    <span class="text-white">/</span>
+                    <a href="cadastro.html">Cadastro</a>
+                </div>
+            </div>
+
         </div>
-    </header>
+    </div>
+</header>
+
+    <!--FILTRO DE PRODUTOS-->
 
     <div class="container-fluid mt-4">
         <div class="row">
@@ -99,27 +129,51 @@
                 <!-- CATEGORIA -->
                 <h6 class="mt-3">Categoria</h6>
                 <div>
-                    <input type="checkbox" class="filtro-categoria" value="livro"> Livros<br>
-                    <input type="checkbox" class="filtro-categoria" value="hq"> HQ<br>
-                    <input type="checkbox" class="filtro-categoria" value="manga"> Manga<br>
+                    <input type="checkbox" class="filtro-categoria" value="hq"> HQs<br>
+                    <input type="checkbox" class="filtro-categoria" value="manga"> Mangás<br>
+                </div>
+
+                <!-- VARIAÇÃO / FORMATO -->
+                <h6 class="mt-3">Variação</h6>
+                <div>
+                    <input type="checkbox" class="filtro-tamanho" value="Único"> Único (volume)
                 </div>
 
                 <!-- PREÇO -->
                 <h6 class="mt-3">Preço</h6>
-                <input type="range" id="precoRange" min="20" max="300" value="300" class="form-range">
-                <span id="precoValor">Até R$ 300</span>
+                <input type="range" id="precoRange" min="10" max="200" value="200" class="form-range">
+                <span id="precoValor">Até R$ 200</span>
             </aside>
 
             <!-- LISTA DE PRODUTOS -->
             <main class="col-12 col-md-9 col-lg-10">
                 <h3 class="mb-4">Leitura</h3>
-
                 <div class="row" id="listaProdutos"></div>
             </main>
 
         </div>
     </div>
 
-    <script src="produtos-leitura.js"></script>
+        <script src="produtos-leitura.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const params = new URLSearchParams(window.location.search);
+                const q = params.get('q');
+                if (q) {
+                    const si = document.getElementById('searchInput') || document.querySelector('.input-search');
+                    if (si) {
+                        si.value = q;
+                        si.dispatchEvent(new Event('input'));
+                        const interval = setInterval(() => {
+                            if (typeof filtrar === 'function') {
+                                filtrar();
+                                clearInterval(interval);
+                            }
+                        }, 100);
+                        setTimeout(() => clearInterval(interval), 2000);
+                    }
+                }
+            });
+        </script>
 </body>
 </html>

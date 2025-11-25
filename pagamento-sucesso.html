@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pagamento confirmado — Covil Nerd</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+</head>
+<body class="bg-light">
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-8">
+            <div class="card p-4 text-center">
+                <h3>Pagamento confirmado</h3>
+                <p id="msg" class="lead">Obrigado! Seu pagamento foi processado.</p>
+                <p id="detalhes"></p>
+                <a href="index.html" class="btn btn-primary">Voltar para a loja</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const qs = new URLSearchParams(window.location.search);
+    const produto = qs.get('produto') || '';
+    const preco = Number(qs.get('preco')) || 0;
+    const nomeCliente = qs.get('nomeCliente') || '';
+    const detalhes = document.getElementById('detalhes');
+    const formatter = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' });
+    detalhes.textContent = `Pedido: ${produto} — ${formatter.format(preco)} | Cliente: ${nomeCliente}`;
+</script>
+</body>
+</html>

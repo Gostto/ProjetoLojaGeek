@@ -14,16 +14,16 @@ const produtos = [
         parcelamento: "5x de R$ 44,00",
         categoria: "chinelo",
         tamanho: ["38","39","40","41","42"],
-        img: "https://static.zattini.com.br/produtos/tenis-cano-alto-anime-naruto-2-top/21/8B3-0373-221/8B3-0373-221_zoom1.jpg?ts=1694812939&ims=1088x",
+        img: "https://m.media-amazon.com/images/I/61tLdOiMMJL._AC_SY695_.jpg",
         link: "produto00.html"
     },
     {
-        nome: "Crocs Naruto Uzumaki",
+        nome: "Crocs Harry Potter",
         preco: 220,
         parcelamento: "5x de R$ 44,00",
         categoria: "sandalia",
         tamanho: ["38","39","40","41","42"],
-        img: "https://static.zattini.com.br/produtos/tenis-cano-alto-anime-naruto-2-top/21/8B3-0373-221/8B3-0373-221_zoom1.jpg?ts=1694812939&ims=1088x",
+        img: "https://m.media-amazon.com/images/I/813vbnjL97L._AC_SX695_.jpg",
         link: "produto00.html"
     },
 ];
@@ -31,8 +31,10 @@ const produtos = [
 function renderizar(lista) {
     const container = document.getElementById("listaProdutos");
     container.innerHTML = "";
-
+    const formatter = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' });
     lista.forEach(p => {
+        const precoParam = Number(p.preco).toFixed(2);
+        const buyHref = `pagamento.html?produto=${encodeURIComponent(p.link)}&nome=${encodeURIComponent(p.nome)}&preco=${encodeURIComponent(precoParam)}`;
         container.innerHTML += `
             <div class="col-6 col-md-4 col-lg-3 mb-4">
                 <div class="card-produto text-decoration-none">
@@ -40,9 +42,9 @@ function renderizar(lista) {
                     <img src="${p.img}" alt="${p.nome}">
                     <h5 class="mt-2">${p.nome}</h5>
                 </a>
-                    <p class="h5 text-danger fw-bold">R$ ${p.preco},00</p>
+                    <p class="h5 text-danger fw-bold">${formatter.format(p.preco)}</p>
                     <p class="text-muted">ou ${p.parcelamento} sem juros</p>
-                    <button class="btn btn-success w-100">Comprar</button>
+                    <a href="${buyHref}" class="btn btn-success w-100">Comprar</a>
                 </div>
             </div>
         `;
